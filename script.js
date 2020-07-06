@@ -99,12 +99,44 @@ const move = () => {
     }
 }
 
+const moveLeft = () => {
+    undraw();
+    currentPosition -= 1;
+    draw();
+}
+
+const moveRight = () => {
+    undraw();
+    currentPosition += 1;
+    draw();
+}
+
+const moveDown = () => {
+    undraw();
+    currentPosition += lineWidth;
+    draw();
+}
+
+
+const pressKey = (event) => {
+
+    if(event.keyCode == 37) {
+        moveLeft();
+    }
+    if(event.keyCode == 39) {
+        moveRight();     
+    }
+    if(event.keyCode == 40) {
+        moveDown();
+    }
+}
+
 draw();
 setInterval(move, 1000);
 
 
 
-
+document.addEventListener('keyup', pressKey);
 
 
 

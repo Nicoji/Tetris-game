@@ -1,4 +1,41 @@
-body {background-color: rgb(174, 0, 255);}
+body {
+    background-image: linear-gradient(#ae00ff, #0026ff);
+    height: 98vh;
+}
+
+.next-section, .score-section {
+    position: absolute;
+    top: 20px;  
+    height: 100px;
+    width: 80px;
+    border: 3px solid grey;
+    background-color: grey;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.score-section {
+    left: 315px;
+}
+
+.next-section {
+    left: 650px;
+}
+
+.small-grid {
+    margin: auto;
+    margin-top: -10px;
+    height: 56px;
+    width: 56px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.small-grid div {
+    height: 12px;
+    width: 12px;
+    border: 1px solid #ffffff4d;
+}
 
 .grid {
     width: 220px;
@@ -31,21 +68,21 @@ body {background-color: rgb(174, 0, 255);}
 
 /* Colors */
 .green {
-    background-color: green !important;
+    background-color: #30a130 !important;
 }
 
 .red {
-    background-color: red !important;
+    background-color: #e00c0c !important;
 }
 
 .yellow {
-    background-color: yellow !important;
+    background-color: #d3c71b !important;
 }
 
 .blue {
-    background-color: blue !important;
+    background-color: #0088e2 !important;
 }
 
 .orange {
-    background-color: orange !important;
+    background-color: #f59a31 !important;
 }

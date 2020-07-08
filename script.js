@@ -154,13 +154,11 @@ const move = () => {
         randomColor = Math.floor(Math.random() * colors.length);
         nextShape = shapes[randomNext][indexRotate];
         nextShapeMini = shapesMini[randomNext][indexRotate];
-        
         currentColor = colors[randomColor];
         currentPosition = 4; 
         draw();
         undrawNext();   
         drawNext();
-
         score += 10;
         scoreDisplay.textContent = score;
     }
@@ -169,8 +167,7 @@ const move = () => {
 const moveLeft = () => {
 
     if(currentPosition % lineWidth == 0) {
-        console.log('nop');
-        
+        console.log('nop');        
     }
 
     undraw();
@@ -214,29 +211,32 @@ const moveDown = () => {
 
 const pressKey = (event) => {
 
-    console.log(indexRotate);
-    
-    if(event.keyCode == 37) {
-        moveLeft();
-    }
-    if(event.keyCode == 39) {
-        moveRight();     
-    }
-    if(event.keyCode == 40) {
-        moveDown();
-    }
-    if(event.keyCode == 32) {
-        undraw();
+    if(!isGameLive) {
+        return;
+    } else {
 
-        if(indexRotate == 3) {
-            indexRotate = 0;
-        } else {
-            indexRotate += 1;
+        if(event.keyCode == 37) {
+            moveLeft();
         }
-        
-        current = shapes[randomNext][indexRotate];
-        draw();
-    }
+        if(event.keyCode == 39) {
+            moveRight();     
+        }
+        if(event.keyCode == 40) {
+            moveDown();
+        }
+        if(event.keyCode == 32) {
+            undraw();
+    
+            if(indexRotate == 3) {
+                indexRotate = 0;
+            } else {
+                indexRotate += 1;
+            }
+            
+            current = shapes[random][indexRotate];
+            draw();
+        }
+    } 
 }
 
 const pausePlay = () => {

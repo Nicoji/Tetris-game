@@ -167,7 +167,7 @@ const move = () => {
 const moveLeft = () => {
 
     if(currentPosition % lineWidth == 0) {
-        console.log('nop');        
+        return;        
     }
 
     undraw();
@@ -178,6 +178,7 @@ const moveLeft = () => {
 }
 
 const moveRight = () => {
+
     undraw();
     currentPosition += 1;
     draw();
